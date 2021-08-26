@@ -1,0 +1,1 @@
+Get-WinEvent -FilterHashTable @{ID=@(4624,4634,4647,4648,4800,4801,4802,4803); Path=".\Security2.evtx"} | Export-CSV C:\Users\javanzat\PycharmProjects\evtlog1\dist\Security-Unknown-Host-2019-08-01-12-41-55.622723.csv
