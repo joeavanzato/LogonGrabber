@@ -109,8 +109,8 @@ def copy_over(): #Maps hostname to network drive and retrieves Security.evtx, co
     #win32wnet.WNetAddConnection2(win32netcon.RESOURCETYPE_DISK, 'Z:', share, None, user, password, 0)
     if nopass == 1:
         try:
-            print("Executing Command : " + r'net use * ' + share +' /user:PAYCHEX\\' + user)
-            subprocess.call(r'net use * ' + share +' /user:PAYCHEX\\' + user, shell=True)
+            print("Executing Command : " + r'net use * ' + share +' /user:'+ user)
+            subprocess.call(r'net use * ' + share +' /user:'+ user, shell=True)
         except:
             print("Drive could NOT be mapped!")
             print(traceback.print_exc(sys.exc_info()))
@@ -118,8 +118,8 @@ def copy_over(): #Maps hostname to network drive and retrieves Security.evtx, co
             exit(0)
     else:
         try:
-            print("Executing Command : " + r'net use * ' + share + ' ' + password + ' /user:PAYCHEX\\' + user)
-            subprocess.call(r'net use * '+share+' '+password+' /user:PAYCHEX\\'+user, shell=True)
+            print("Executing Command : " + r'net use * ' + share + ' ' + password + ' /user:'+ user)
+            subprocess.call(r'net use * '+share+' '+password+' /user:'+ user, shell=True)
         except:
             print("Drive could NOT be mapped!")
             print(traceback.print_exc(sys.exc_info()))
